@@ -1,0 +1,28 @@
+package com.example.notebook.roomdb
+
+import androidx.lifecycle.LiveData
+import androidx.room.Dao
+import androidx.room.Delete
+import androidx.room.Insert
+import androidx.room.Query
+import androidx.room.Update
+import com.example.notebook.data.Note
+
+
+@Dao
+interface NoteDao {
+
+    @Insert
+    suspend fun insertNote(note: Note): Long
+
+    @Query("""
+        SELECT * FROM notes_table
+    """)
+    fun getAllNotes(): LiveData<List<Note>>
+
+    @Update
+    suspend fun updateNote(note: Note)
+
+    @Delete
+    suspend fun deleteNote(note: Note)
+}
