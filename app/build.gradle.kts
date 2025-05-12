@@ -7,11 +7,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.notebook"
+    namespace = "com.ahmad.notebook"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.example.notebook"
+        applicationId = "com.ahmad.notebook"
         minSdk = 26
         targetSdk = 35
         versionCode = 1
