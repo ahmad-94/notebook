@@ -1,4 +1,4 @@
-package com.ahmad.notebook.data
+package com.ahmad.notebook.dateUtils
 
 import androidx.room.TypeConverter
 import java.time.LocalDateTime
@@ -26,4 +26,3 @@ class Converters {
     }
 
 }
-

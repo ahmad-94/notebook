@@ -26,12 +26,10 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
-import androidx.core.content.pm.PackageInfoCompat
 import androidx.lifecycle.ViewModelProvider
 import com.ahmad.notebook.data.Note
 import com.ahmad.notebook.data.NoteViewModelFactory
 import com.ahmad.notebook.repository.NotesRepository
-import com.ahmad.notebook.repository.checkForUpdates
 import com.ahmad.notebook.roomdb.NotesDB
 import com.ahmad.notebook.screens.DisplayDialog
 import com.ahmad.notebook.screens.DisplayNotesList
@@ -44,13 +42,6 @@ class MainActivity : ComponentActivity() {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
-
-        val versionCode = PackageInfoCompat.getLongVersionCode(
-            applicationContext.packageManager
-                .getPackageInfo(applicationContext.packageName, 0)
-        ).toInt()
-
-        checkForUpdates(context = applicationContext, currentVersionCode = versionCode)
 
 
 

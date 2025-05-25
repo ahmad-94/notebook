@@ -25,4 +25,8 @@ interface NoteDao {
 
     @Delete
     suspend fun deleteNote(note: Note)
+
+    @Query("SELECT * FROM notes_table WHERE alertDateTime IS NOT NULL")
+    fun getNotesWithAlarms(): List<Note>
+
 }

@@ -5,7 +5,7 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
-import com.ahmad.notebook.data.Converters
+import com.ahmad.notebook.dateUtils.Converters
 import com.ahmad.notebook.data.Note
 
 

@@ -1,8 +1,13 @@
 package com.ahmad.notebook.viewmodel
 
+import android.app.AlarmManager
+import android.app.PendingIntent
+import android.content.Context
+import android.content.Intent
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.ahmad.notebook.data.AlarmReceiver
 import com.ahmad.notebook.data.Note
 import com.ahmad.notebook.repository.NotesRepository
 import kotlinx.coroutines.launch
@@ -24,4 +29,6 @@ class NoteViewModel(private  val repository: NotesRepository): ViewModel() {
     fun deleteNote(note: Note) = viewModelScope.launch {
         repository.deleteNote(note)
     }
+
+
 }
