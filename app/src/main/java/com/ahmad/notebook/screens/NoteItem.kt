@@ -93,7 +93,8 @@ fun DisplayNoteItem(note: Note, onNoteClick: (Note) -> Unit) {
 
 @Composable
 fun DisplayLocalDatetime(alertDateTime: LocalDateTime?, note: Note, onBellClick: (Note) -> Unit) {
-    val isPersian = LocalConfiguration.current.locale.language == "fa"
+
+    val isPersian = Locale.getDefault().language == "fa"
 
     alertDateTime?.let {
         val formatted = if (isPersian) {

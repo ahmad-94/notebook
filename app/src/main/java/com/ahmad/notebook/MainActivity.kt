@@ -16,6 +16,7 @@ import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.runtime.mutableStateOf
@@ -33,7 +34,9 @@ import com.ahmad.notebook.repository.NotesRepository
 import com.ahmad.notebook.roomdb.NotesDB
 import com.ahmad.notebook.screens.DisplayDialog
 import com.ahmad.notebook.screens.DisplayNotesList
+import com.ahmad.notebook.screens.MainScreen
 import com.ahmad.notebook.screens.MyNotesTopAppBar
+import com.ahmad.notebook.screens.ShowBatteryOptimizationAlert
 import com.ahmad.notebook.ui.theme.RoomNoteBookTheme
 import com.ahmad.notebook.viewmodel.NoteViewModel
 import java.time.LocalDateTime
@@ -60,6 +63,8 @@ class MainActivity : ComponentActivity() {
             }
         }
 
+
+
         window.decorView.layoutDirection = View.LAYOUT_DIRECTION_LTR
 
 
@@ -75,6 +80,9 @@ class MainActivity : ComponentActivity() {
 
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
+
+
+
         setContent {
 
                 var showDialog by remember { mutableStateOf(false) }
@@ -82,6 +90,9 @@ class MainActivity : ComponentActivity() {
                 var localTimeDate by remember { mutableStateOf<LocalDateTime?>(null) }
 
             RoomNoteBookTheme {
+
+                MainScreen()
+
                 Scaffold (
                     floatingActionButton = {
                         MyFloatBtn(

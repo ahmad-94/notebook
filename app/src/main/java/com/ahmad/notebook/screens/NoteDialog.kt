@@ -402,10 +402,11 @@ fun scheduleAlarm(
         .toInstant()
         .toEpochMilli()
 
-    alarmManager.setExact(
+    alarmManager.setExactAndAllowWhileIdle(
         AlarmManager.RTC_WAKEUP,
         triggerAtMillis,
         pendingIntent
     )
+
 }
 
